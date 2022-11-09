@@ -110,7 +110,9 @@ class PagerDetailFragment : Fragment() {
                     headlinesAdapter.clearItems()
                     headlinesAdapter.setItems(data)
                 }
-                Status.ERROR -> {}
+                Status.ERROR -> {
+                    Log.d(TAG, it.message.toString())
+                }
                 Status.LOADING -> {}
             }
         }

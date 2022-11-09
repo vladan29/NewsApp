@@ -8,7 +8,7 @@ object AppConstants {
 
     //Api urls and keys
     const val NEWS_API_BASE_URL = "https://newsapi.org/v2/"
-    const val NEWS_API_KEY = "c540ba5d76254cadb8261a1a2fac4342"
+    const val NEWS_API_KEY = "76dc0ad9a2794fa8b36cef29dda4944c"
 
 
 }

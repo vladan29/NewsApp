@@ -59,6 +59,10 @@ dependencies {
     test()
 }
 
+hilt {
+    enableAggregatingTask = true
+}
+
 kapt {
     correctErrorTypes = true
 }

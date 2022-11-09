@@ -15,9 +15,11 @@ object Version {
     const val ktx_androidx_activity = "1.4.0"
     const val ktx_androidx_fragment = "1.4.1"
     const val ktx_a_reflection = "1.6.10"
+    const val ktx_nav_ui = "2.5.3"
+    const val ktx_nav_fragment = "2.5.3"
 
     //Hilt
-    const val hilt = "2.38.1"
+    const val hilt = "2.44"
     const val hilt_androidx_compiler = "1.0.0"
 
     //Networking
@@ -56,12 +58,15 @@ object Dependencies {
     const val ktx_ax_activity = "androidx.activity:activity-ktx:${Version.ktx_androidx_activity}"
     const val ktx_ax_fragment = "androidx.fragment:fragment-ktx:${Version.ktx_androidx_fragment}"
     const val ktx_reflection = "org.jetbrains.kotlin:kotlin-reflect:${Version.ktx_a_reflection}"
+    const val ktx_a_nav_ui = "androidx.navigation:navigation-ui-ktx:${Version.ktx_nav_ui}"
+    const val ktx_a_nav_fragment = "androidx.navigation:navigation-fragment-ktx:${Version.ktx_nav_fragment}"
 
     //Hilt
     const val ax_hilt = "com.google.dagger:hilt-android:${Version.hilt}"
     const val ax_hilt_compiler = "com.google.dagger:hilt-android-compiler:${Version.hilt}"
     const val hilt_androidx_compiler =
         "androidx.hilt:hilt-compiler:${Version.hilt_androidx_compiler}"
+    const val kapt_jetbrains =  "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2"
 
     //Networking
     const val retrofit_retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
@@ -106,6 +111,8 @@ fun DependencyHandler.ktx() {
     implementation(Dependencies.ktx_ax_activity)
     implementation(Dependencies.ktx_ax_fragment)
     implementation(Dependencies.ktx_reflection)
+    implementation(Dependencies.ktx_a_nav_ui)
+    implementation(Dependencies.ktx_a_nav_fragment)
 }
 
 fun DependencyHandler.networking() {
@@ -121,6 +128,7 @@ fun DependencyHandler.hilt() {
     implementation(Dependencies.ax_hilt)
     kapt(Dependencies.ax_hilt_compiler)
     kapt(Dependencies.hilt_androidx_compiler)
+    kapt(Dependencies.kapt_jetbrains)
 }
 
 fun DependencyHandler.picasso() {

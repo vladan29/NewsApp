@@ -1,10 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.vladan.newsapp.MainActivity">
+    tools:context="com.vladan.newsapp.screens.main.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_us"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Country US"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ca"
+        android:orderInCategory="100"
+        android:title="Country Canada"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_rs"
+        android:orderInCategory="100"
+        android:title="Country Serbia"
         app:showAsAction="never" />
 </menu>

@@ -3,26 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/PagerContainerFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.vladan.newsapp.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/PagerContainerFragment"
+        android:name="com.vladan.newsapp.screens.pager.container.PagerContainerFragment"
+        android:label="@string/pager_container_fragment_label"
+        tools:layout="@layout/fragment_pager_container">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_PagerContainerFragment_to_ArticleFragment"
+            app:destination="@id/ArticleFragment">
+
+            <argument
+                android:name="url"
+                android:defaultValue=""
+                app:argType="string" />
+        </action>
+
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.vladan.newsapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/ArticleFragment"
+        android:name="com.vladan.newsapp.screens.article.ArticleFragment"
+        android:label="@string/article_fragment_label"
+        tools:layout="@layout/fragment_article">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_ArticleFragment_to_PagerContainerFragment"
+            app:destination="@id/PagerContainerFragment"
+            app:popUpTo="@id/PagerContainerFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>

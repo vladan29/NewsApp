@@ -54,6 +54,7 @@ dependencies {
     networking()
     hilt()
     picasso()
+    glide()
     googlePlaces()
     room()
     test()

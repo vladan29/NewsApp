@@ -31,6 +31,9 @@ object Version {
     const val picasso = "2.8"
     const val transformation = "2.3.0"
 
+    //Glide
+    const val glide = "4.14.2"
+
     //Google
     const val google_places = "2.5.0"
     const val google_play_services = "18.0.0"
@@ -59,14 +62,15 @@ object Dependencies {
     const val ktx_ax_fragment = "androidx.fragment:fragment-ktx:${Version.ktx_androidx_fragment}"
     const val ktx_reflection = "org.jetbrains.kotlin:kotlin-reflect:${Version.ktx_a_reflection}"
     const val ktx_a_nav_ui = "androidx.navigation:navigation-ui-ktx:${Version.ktx_nav_ui}"
-    const val ktx_a_nav_fragment = "androidx.navigation:navigation-fragment-ktx:${Version.ktx_nav_fragment}"
+    const val ktx_a_nav_fragment =
+        "androidx.navigation:navigation-fragment-ktx:${Version.ktx_nav_fragment}"
 
     //Hilt
     const val ax_hilt = "com.google.dagger:hilt-android:${Version.hilt}"
     const val ax_hilt_compiler = "com.google.dagger:hilt-android-compiler:${Version.hilt}"
     const val hilt_androidx_compiler =
         "androidx.hilt:hilt-compiler:${Version.hilt_androidx_compiler}"
-    const val kapt_jetbrains =  "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2"
+    const val kapt_jetbrains = "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2"
 
     //Networking
     const val retrofit_retrofit = "com.squareup.retrofit2:retrofit:${Version.retrofit}"
@@ -79,6 +83,10 @@ object Dependencies {
     //Picasso
     const val a_picasso = "com.squareup.picasso:picasso:${Version.picasso}"
     const val a_transformation = "com.makeramen:roundedimageview:${Version.transformation}"
+
+    //Glide
+    const val a_glide = "com.github.bumptech.glide:glide:${Version.glide}"
+    const val a_glide_kapt = "com.github.bumptech.glide:compiler:${Version.glide}"
 
     //Google
     const val a_google_places =
@@ -134,6 +142,11 @@ fun DependencyHandler.hilt() {
 fun DependencyHandler.picasso() {
     implementation(Dependencies.a_picasso)
     implementation(Dependencies.a_transformation)
+}
+
+fun DependencyHandler.glide() {
+    implementation(Dependencies.a_glide)
+    kapt(Dependencies.a_glide_kapt)
 }
 
 fun DependencyHandler.googlePlaces() {
